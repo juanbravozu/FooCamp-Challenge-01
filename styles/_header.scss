@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px auto;
+
+    &__title {
+        font-size: 2.4rem;
+    }
+
+    &__option {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+        vertical-align: middle;
+        border-radius: 20px;
+        background-color: #F2F5FB;
+        transition: background-color 0.3s ease-out;
+
+        &:hover {
+            background-color: darken($color: #F2F5FB, $amount: 5%);
+        }
+    }
+
+    &__option--profile {
+        position: relative;
+        width: auto;
+
+        &::after {
+            content: '';
+            display: none;
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            right: 15px;
+            background-image: url('../assets/icon_arrowDown.svg');
+            transition: transform 0.3s ease-out;
+        }
+
+        &:hover::after {
+            transform: rotate(-180deg);
+        }
+    }
+
+    &__name {
+        font-weight: 600;
+        display: none;
+    }
+
+    &__profileImg {
+        height: 40px;
+    }
+
+    @media (min-width: $small) {
+
+        &__title {
+            font-size: 3.8rem;
+        }
+
+        &__option--profile {
+            padding-left: 6.5rem;
+            padding-right: 3.5rem;
+
+            &::after {
+                display: block;
+            }
+        }
+
+        &__name {
+            display: block;
+        }
+
+        &__profileImg {
+            position: absolute;
+            height: 55px;
+            bottom: 5px;
+            left: -5px;
+        }
+    }
+
+    @media (max-width: 355px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+
+        &__options {
+            margin-left: auto;
+        }
+    }
+}

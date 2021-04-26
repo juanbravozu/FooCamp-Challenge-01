@@ -12,6 +12,8 @@ $medium: 769px;
 $large: 1440px;
 
 @import './nav';
+@import './header';
+@import './card';
 
 *, *::after, *::before {
     margin: 0;
@@ -23,6 +25,10 @@ $large: 1440px;
 html {
     font-size: 62.5%;
     height: fill;
+
+    @media (min-width: $medium)  {
+        height: auto;
+    }
 }
 
 body {
@@ -34,6 +40,7 @@ body {
     @media (min-width: $medium) {
         display: flex;
         flex-direction: row-reverse;
+        height: 100vh;
     }
 }
 
@@ -41,10 +48,37 @@ main {
     height: calc(100% - 60px);
     color: $black;
     background-color: white;
+    padding: 2rem;
     border-radius: 20px;
 
     @media (min-width: $medium) {
         height: 100%;
         width: 100%;
     }
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+p {
+    font-size: 1.4rem;
+
+    @media (min-width: $small) {
+        font-size: 1.6rem;
+    } 
+}
+
+h2, h3 {
+    font-size: 1.8rem;
+
+    @media (min-width: $small) {
+        font-size: 2.9rem;
+    }
+}
+
+h2 {
+    margin-bottom: 20px;
 }
