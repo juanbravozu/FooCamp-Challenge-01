@@ -255,6 +255,7 @@
 }
 
 .card__graphLine {
+  position: relative;
   height: calc(var(--value) * 1px);
   max-height: 100px;
   border-left: 3px #b5d9fc solid;
@@ -263,6 +264,76 @@
 
 .card__graphLine:hover {
   border-left: 3px #9cccfb solid;
+}
+
+.card__graphLine:hover .card__graphIndicator {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.card__graphLine:hover .card__graphIndicator::after, .card__graphLine:hover .card__graphIndicator::before {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 1;
+}
+
+.card__graphIndicator {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: -1px;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+  border-radius: 8px;
+  background-color: #9cccfb;
+  border: 2px white solid;
+  -webkit-transition-property: -webkit-transform opacity;
+  transition-property: -webkit-transform opacity;
+  transition-property: transform opacity;
+  transition-property: transform opacity, -webkit-transform opacity;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+
+.card__graphIndicator::after {
+  content: attr(data-value);
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  z-index: 2;
+  padding: 3px 8px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #202020;
+  border-radius: 2rem;
+  opacity: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.card__graphIndicator::before {
+  content: '';
+  position: absolute;
+  border-top: 5px #202020 solid;
+  border-left: 5px transparent solid;
+  border-right: 5px transparent solid;
+  left: 50%;
+  top: -14px;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
 }
 
 .card--blue {
