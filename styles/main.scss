@@ -1,0 +1,50 @@
+$black: #202020;
+$gray: #959595;
+
+$blue: #E6F2FE;
+$green: #D6EDD9;
+$purple: #E5DEF0;
+$yellow: #F6F0D8;
+
+//Breakpoints
+$small: 576px;
+$medium: 769px;
+$large: 1440px;
+
+@import './nav';
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    height: fill;
+}
+
+body {
+    height: 100vh;
+    height: fill;
+    background-color: $black;
+    padding: 2rem;
+
+    @media (min-width: $medium) {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+main {
+    height: calc(100% - 60px);
+    color: $black;
+    background-color: white;
+    border-radius: 20px;
+
+    @media (min-width: $medium) {
+        height: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,126 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+}
+
+.nav__icon {
+  margin: 0 5px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+
+.nav__icon:hover {
+  opacity: 1;
+}
+
+.nav__logoContainer {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 15px;
+  background-color: #F6F0D8;
+}
+
+.nav__logoContainer:hover .nav__logo {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.nav__logo {
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+@media (min-width: 576px) {
+  .nav__link {
+    margin: 0 15px;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    width: 80px;
+    margin: 20px;
+    margin-left: 0;
+  }
+  .nav__logoContainer {
+    width: 70px;
+    height: 70px;
+  }
+  .nav__link {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 40px auto;
+  }
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill;
+}
+
+body {
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill;
+  background-color: #202020;
+  padding: 2rem;
+}
+
+@media (min-width: 769px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+main {
+  height: calc(100% - 60px);
+  color: #202020;
+  background-color: white;
+  border-radius: 20px;
+}
+
+@media (min-width: 769px) {
+  main {
+    height: 100%;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
