@@ -1,92 +1,46 @@
-.header {
-    display: flex;
-    justify-content: space-between;
+header {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+header.header {
+    width: 100%;
     align-items: center;
-    margin: 10px auto;
 
-    &__title {
-        font-size: 2.4rem;
-    }
+    .btn {
+        margin: 0 10px;
 
-    &__option {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        margin: 0 5px;
-        vertical-align: middle;
-        border-radius: 20px;
-        background-color: #F2F5FB;
-        transition: background-color 0.3s ease-out;
-
-        &:hover {
-            background-color: darken($color: #F2F5FB, $amount: 5%);
+        &:last-child, &:first-child {
+            margin: 0;
         }
     }
 
-    &__option--profile {
+    .btn--profile p {
         position: relative;
-        width: auto;
 
         &::after {
             content: '';
-            display: none;
             position: absolute;
             width: 15px;
             height: 15px;
-            right: 15px;
+            top: 50%;
+            transform: translate(3px, -50%);
             background-image: url('../assets/icon_arrowDown.svg');
-            transition: transform 0.3s ease-out;
         }
-
-        &:hover::after {
-            transform: rotate(-180deg);
-        }
-    }
-
-    &__name {
-        font-weight: 600;
-        display: none;
-    }
-
-    &__profileImg {
-        height: 40px;
     }
 
     @media (min-width: $small) {
-
-        &__title {
-            font-size: 3.8rem;
-        }
-
-        &__option--profile {
-            padding-left: 6.5rem;
-            padding-right: 3.5rem;
-
-            &::after {
-                display: block;
-            }
-        }
-
-        &__name {
-            display: block;
-        }
-
-        &__profileImg {
-            position: absolute;
-            height: 55px;
-            bottom: 5px;
-            left: -5px;
+        h1 {
+            font-size: 2.8rem;
         }
     }
 
-    @media (max-width: 355px) {
+    @media (max-width: 400px) {
         flex-direction: column-reverse;
         align-items: flex-start;
 
-        &__options {
-            margin-left: auto;
+        > .flex-between {
+            align-self: flex-end;
         }
     }
 }

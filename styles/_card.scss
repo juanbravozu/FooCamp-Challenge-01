@@ -1,42 +1,55 @@
 .card {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    min-height: 230px;
-    padding: 20px;
+    min-height: 300px;
+    padding: 2rem;
     border-radius: 20px;
 
-    &__header {
-        position: relative;
+    &__container {
+        &:last-of-type {
+            align-items: center;
+        }
+
+        &--range {
+            max-width: 240px;
+        }
+
+        &--graph {
+            height: 150px;
+            align-items: flex-end;
+        }
+    }
+
+    &__title {
+        font-size: 2.4rem;
+    }
+
+    &__subtitle {
+        font-size: 1.6rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
     }
 
     &__options {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        top: 0;
-        right: 0;
-        border-radius: 15px;
+        @include grid-center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        border-radius: 20px;
+        background-color: transparent;
         transition: background-color 0.3s ease-out;
-
-        &:hover {
-            background-color: darken($color: $blue, $amount: 2%);
-        }
     }
 
-    &__optionsIcon {
-        vertical-align: middle;
-    }
-
-    &__timeRange {
+    &__range {
         font-size: 1.4rem;
-        opacity: 0.3;
-        transition: opacity 0.4s ease-out;
-
-        + .card__timeRange {
-            margin-left: 20px;
-        }
+        opacity: 0.5;
+        transition: opacity 0.3s ease-out;
 
         &:hover, &--active {
             opacity: 1;
@@ -44,84 +57,121 @@
     }
 
     &__graph {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        height: 100px;
-        margin: 10px 0;
-    }
-
-    &__graphLine {
         position: relative;
-        height: calc(var(--value) * 1px);
-        max-height: 100px;
-        border-left: 3px darken($color: $blue, $amount: 10%) solid;
+        height: var(--height);
+        border: darken($color: $blue, $amount: 10%) 2px solid;
         cursor: pointer;
 
-        &:hover {
-            border-left: 3px darken($color: $blue, $amount: 15%) solid;
+        &:hover{ 
+            border-color: darken($color: $blue, $amount: 15%);
 
-            .card__graphIndicator {
-                transform: translate(-50%, -50%);
+            .card__indicator {
                 opacity: 1;
                 z-index: 2;
-
-                &::after, &::before {
-                    transform: translateX(-50%);
-                    opacity: 1;
-                }
             }
         }
     }
 
-    &__graphIndicator {
+    &__indicator {
         position: absolute;
         width: 15px;
         height: 15px;
-        left: -1px;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        border: white 2px solid;
+        background-color: darken($color: $blue, $amount: 10%);
         opacity: 0;
-        transform: translate(-50%, -45%);
-        border-radius: 8px;
-        background-color: darken($color: $blue, $amount: 15%);
-        border: 2px white solid;
-        transition-property: transform opacity;
-        transition-duration: 0.3s;
-        transition-timing-function: ease-out;
+        pointer-events: none;
+        transition: opacity 0.3s ease-out;
 
-        &::after {
-            content: attr(data-value);
+        &::before {
+            content: '$27 482.00';
             position: absolute;
-            left: 50%;
-            top: -40px;
-            z-index: 2;
-            padding: 3px 8px;
-            transform: translateX(-50%);
+            left: 0;
+            top: -10px;
+            transform: translate(-45%, -100%);
+            padding: 5px 15px;
             background-color: $black;
-            border-radius: 2rem;
-            opacity: 0;
+            border-radius: 20px;
             font-size: 1.4rem;
             font-weight: 600;
             color: white;
             white-space: nowrap;
-            text-align: center;
-            transition: opacity 0.3s ease-out;
         }
 
-        &::before {
+        &::after {
             content: '';
             position: absolute;
-            border-top: 5px $black solid;
-            border-left: 5px transparent solid;
-            border-right: 5px transparent solid;
-            left: 50%;
-            top: -14px;
-            opacity: 0;
-            transform: translateX(-50%);
-            transition: opacity 0.3s ease-out;
+            top: -11px;
+            left: -1px;
+            border-top: $black 7px solid;
+            border-left: transparent 7px solid;
+            border-right: transparent 7px solid;
+        }
+    }
+
+    &--green {
+        background-color: $green;
+
+        .card__text {
+            color: darken($color: $green, $amount: 30%);
+        }
+
+        .card__options:hover {
+            background-color: darken($color: $green, $amount: 10%);
+        }
+    }
+
+    &--purple {
+        background-color: $purple;
+
+        .card__text {
+            color: darken($color: $purple, $amount: 30%);
+        }
+
+        .card__options:hover {
+            background-color: darken($color: $purple, $amount: 10%);
+        }
+    }
+
+    &--yellow {
+        background-color: $yellow;
+
+        .card__text {
+            color: darken($color: $yellow, $amount: 30%);
+        }
+
+        .card__options:hover {
+            background-color: darken($color: $yellow, $amount: 10%);
         }
     }
 
     &--blue {
         background-color: $blue;
+
+        .card__text {
+            color: darken($color: $blue, $amount: 30%);
+        }
+
+        .card__options:hover {
+            background-color: darken($color: $blue, $amount: 10%);
+        }
+    }
+}
+
+.cards-wrapper {
+    .card + .card {
+        margin-top: 2rem;
+    }
+
+    @media (min-width: $medium) {
+        display: flex;
+        column-gap: 2rem;
+
+        .card + .card {
+            margin: 0;
+        }
     }
 }

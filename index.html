@@ -11,160 +11,344 @@
 </head>
 <body>
     <main>
-        <header class="header">
-            <h1 class="header__title">Overview</h1>
+        <header class="flex-between header max-bound">
+            <div>
+                <h1>Overview</h1>
+            </div>
 
-            <div class="header__options">
-                <button class="header__option header__option--search">
-                    <img src="./assets/icon_search.svg" alt="Search" class="header__icon">
+            <div class="flex-between">
+                <button class="btn btn--round">
+                    <img src="./assets/icon_search.svg" alt="Search">
                 </button>
 
-                <button class="header__option">
-                    <img src="./assets/icon_notifications.svg" alt="Notifications" class="header__icon">
+                <button class="btn btn--round">
+                    <img src="./assets/icon_notifications.svg" alt="Notifications">
                 </button>
 
-                <button class="header__option header__option--profile">
-                    <img src="./assets/img_profile.png" alt="Me" class="header__profileImg">
-                    <p class="header__name">Zoia M.</p>
+                <button class="btn btn--round btn--profile">
+                    <img src="./assets/img_profile.png" alt="Profile">
+                    <p>Zoia M.</p>
                 </button>
             </div>
         </header>
 
-        <div class="content__wrapper">
-            <section class="portfolio">
-                <h2>Portfolio</h2>
-                <article class="card card--hasGraph card--blue">
-                    <header class="card__header">
-                        <h3 class="card__title">$ 17 643.41</h3>
-                        <p class="card__subtitle">Portfolio balance</p>
+        <div class="inner-wrapper max-bound">
+            <section id="portfolio-section">
+                <header>
+                    <h2>Portfolio</h2>
+                </header>
+
+                <article class="card card--blue">
+                    <div class="card__container flex-between">
+                        <div>
+                            <h3 class="card__title">$ 17 643.41</h3>
+                            <p class="card__subtitle">Portfolio balance</p>
+                        </div>
+                        
                         <button class="card__options">
-                            <img class="card__optionsIcon" src="./assets/icon_options.svg" alt="Options">
+                            <img src="./assets/icon_options.svg" alt="Options">
                         </button>
-                    </header>
+                    </div>
+            
+                    <div class="card__container flex-between card__container--graph">
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                        <div class="card__graph" style="--height: 50%">
+                            <div class="card__indicator"></div>
+                        </div>
+                    </div>
+            
+                    <div class="card__container flex-between card__container--range">
+                        <button class="card__range">1H</button>
+                        <button class="card__range">24H</button>
+                        <button class="card__range card__range--active">1W</button>
+                        <button class="card__range">1M</button>
+                        <button class="card__range">1Y</button>
+                        <button class="card__range">ALL</button>
+                    </div>
+                </article>
+            </section>
+
+            <section id="ad-section">
+                <article class="ad">
+                    <h2 class="ad__title">Earn <span class="ad__free">free</span> crypto with Coinview Earn</h2>
+                    <p class="ad__text">Learn about different cryptocurrencies and earn them for free!</p>
+                    <button class="btn">Earn now</button>
+                </article>
+            </section>
+
+            <section id="cards-section">
+                <header class="flex-between">
+                    <h2>Your Assets</h2>
+                    <button>
+                        <img src="./assets/icon_filter.svg" alt="Filter">
+                    </button>
+                </header>
+
+                <div class="cards-wrapper">
+                    <article class="card card--green">
+                        <div class="card__container flex-between">
+                            <div>
+                                <h3 class="card__title">1.25 BTC</h3>
+                                <p class="card__subtitle">$ 2948.43</p>
+                            </div>
+                            
+                            <button class="card__options">
+                                <img src="./assets/icon_options.svg" alt="Options">
+                            </button>
+                        </div>
+                
+                        <div class="card__container flex-between">
+                            <div class="icon">
+                                <img src="./assets/icon_bitcoin.svg" alt="">
+                            </div>
+                
+                            <p class="card__text">+ 0.14%</p>
+                        </div>
+                    </article>
+            
+                    <article class="card card--purple">
+                        <div class="card__container flex-between">
+                            <div>
+                                <h3 class="card__title">1.25 BTC</h3>
+                                <p class="card__subtitle">$ 2948.43</p>
+                            </div>
+                            
+                            <button class="card__options">
+                                <img src="./assets/icon_options.svg" alt="Options">
+                            </button>
+                        </div>
+                
+                        <div class="card__container flex-between">
+                            <div class="icon">
+                                <img src="./assets/icon_bitcoin.svg" alt="">
+                            </div>
+                
+                            <p class="card__text">+ 0.14%</p>
+                        </div>
+                    </article>
+            
+                    <article class="card card--yellow">
+                        <div class="card__container flex-between">
+                            <div>
+                                <h3 class="card__title">1.25 BTC</h3>
+                                <p class="card__subtitle">$ 2948.43</p>
+                            </div>
+                            
+                            <button class="card__options">
+                                <img src="./assets/icon_options.svg" alt="Options">
+                            </button>
+                        </div>
+                
+                        <div class="card__container flex-between">
+                            <div class="icon">
+                                <img src="./assets/icon_bitcoin.svg" alt="">
+                            </div>
+                
+                            <p class="card__text">+ 0.14%</p>
+                        </div>
+                    </article>
+                </div>                
+            </section>
+
+            <section id="market-section">
+                <header class="flex-between market-header">
+                    <h2>Market is down 0.80%</h2>
+
+                    <div class="flex-between">
+                        <select name="" id="">
+                            <option value="" selected>1H</option>
+                            <option value="">24H</option>
+                            <option value="">1W</option>
+                            <option value="">1M</option>
+                            <option value="">1Y</option>
+                            <option value="">ALL</option>
+                        </select>
+                
+                        <select name="" id="">
+                            <option value="" selected>Top gainers</option>
+                        </select>
+                    </div>
+                </header>
+
+                <article class="market market--labels">
+                    <div class="market__brand">
+                        <p>Name</p>
+                    </div>
                     
-                    <div class="card__graph" >
-                        <div class="card__graphLine" style="--value: 50">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
+                    <p class="market__text">Price</p>
+                    <p class="market__text">Change</p>
+                    <p class="market__text">Market Cap</p>
+                    <p class="market__text">Watch</p>
+                </article>
+        
+                <article class="market">
+                    <div class="market__brand">
+                        <div class="icon">
+                            <img src="./assets/icon_bitcoin.svg" alt="">
                         </div>
-
-                        <div class="card__graphLine" style="--value: 70">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 60">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 20">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 50">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 60">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 67">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 72">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 68">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 50">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 50">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 50">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 70">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 76">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 83">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 92">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 97">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 100">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 95">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
-                        </div>
-
-                        <div class="card__graphLine" style="--value: 57">
-                            <div class="card__graphIndicator" data-value="$ 27 428.00"></div>
+        
+                        <div>
+                            <p class="market__name">Band Protocol</p>
+                            <p class="market__abbreviation">BAND</p>
                         </div>
                     </div>
                     
-                    <footer class="card__footer">
-                        <button class="card__timeRange">1H</button>
-                        <button class="card__timeRange">24H</button>
-                        <button class="card__timeRange card__timeRange--active">1W</button>
-                        <button class="card__timeRange">1M</button>
-                        <button class="card__timeRange">1Y</button>
-                        <button class="card__timeRange">ALL</button>                        
-                    </footer>
+                    <p class="market__text">$2.42</p>
+                    <p class="market__change">+13.38%</p>
+                    <p class="market__text">$399.8M</p>
+                    <button class="market__watch">
+                        <img src="./assets/icon_star.svg" alt="Observe">
+                    </button>
+                </article>
+        
+                <article class="market">
+                    <div class="market__brand">
+                        <div class="icon">
+                            <img src="./assets/icon_bitcoin.svg" alt="">
+                        </div>
+        
+                        <div>
+                            <p class="market__name">Band Protocol</p>
+                            <p class="market__abbreviation">BAND</p>
+                        </div>
+                    </div>
+                    
+                    <p class="market__text">$2.42</p>
+                    <p class="market__change">+13.38%</p>
+                    <p class="market__text">$399.8M</p>
+                    <button class="market__watch">
+                        <img src="./assets/icon_star.svg" alt="Observe">
+                    </button>
+                </article>
+    
+                <article class="market">
+                    <div class="market__brand">
+                        <div class="icon">
+                            <img src="./assets/icon_bitcoin.svg" alt="">
+                        </div>
+        
+                        <div>
+                            <p class="market__name">Band Protocol</p>
+                            <p class="market__abbreviation">BAND</p>
+                        </div>
+                    </div>
+                    
+                    <p class="market__text">$2.42</p>
+                    <p class="market__change">+13.38%</p>
+                    <p class="market__text">$399.8M</p>
+                    <button class="market__watch">
+                        <img src="./assets/icon_star.svg" alt="Observe">
+                    </button>
+                </article>
+    
+                <article class="market">
+                    <div class="market__brand">
+                        <div class="icon">
+                            <img src="./assets/icon_bitcoin.svg" alt="">
+                        </div>
+        
+                        <div>
+                            <p class="market__name">Band Protocol</p>
+                            <p class="market__abbreviation">BAND</p>
+                        </div>
+                    </div>
+                    
+                    <p class="market__text">$2.42</p>
+                    <p class="market__change">+13.38%</p>
+                    <p class="market__text">$399.8M</p>
+                    <button class="market__watch">
+                        <img src="./assets/icon_star.svg" alt="Observe">
+                    </button>
                 </article>
             </section>
-        </div>
+        </div>        
     </main>
+    
     <nav class="nav">
-        <a href="#" class="nav__logoContainer">
-            <img src="./assets/logo.svg" alt="Logo" class="nav__logo">
+        <a class="icon">
+            <img src="./assets/logo.svg" alt="Logo">
         </a>
 
-        <div class="nav__mainContainer">
+        <div class="nav__container">
             <a href="#" class="nav__link">
-                <img src="./assets/icon_dashboard.svg" alt="Dashboard" class="nav__icon">
+                <img src="./assets/icon_dashboard.svg" alt="">
             </a>
 
             <a href="#" class="nav__link">
-                <img src="./assets/icon_wallet.svg" alt="Wallet" class="nav__icon">
+                <img src="./assets/icon_wallet.svg" alt="">
             </a>
 
             <a href="#" class="nav__link">
-                <img src="./assets/icon_stats.svg" alt="Statistics" class="nav__icon">
+                <img src="./assets/icon_stats.svg" alt="">
             </a>
 
             <a href="#" class="nav__link">
-                <img src="./assets/icon_cube.svg" alt="Cube" class="nav__icon">
+                <img src="./assets/icon_cube.svg" alt="">
             </a>
 
             <a href="#" class="nav__link">
-                <img src="./assets/icon_profile.svg" alt="Profile" class="nav__icon">
+                <img src="./assets/icon_profile.svg" alt="">
             </a>
         </div>
 
         <a href="#" class="nav__link">
-            <img class="nav__icon" src="./assets/icon_logout.svg" alt="Salir">
+            <img src="./assets/icon_logout.svg" alt="">
         </a>
     </nav>
 </body>

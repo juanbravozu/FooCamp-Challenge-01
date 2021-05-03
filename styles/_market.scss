@@ -1,0 +1,54 @@
+.market {
+    display: grid;
+    grid-template-columns: 1.8fr 0.8fr 1fr 1.4fr 0.5fr;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+
+    &--labels {
+        font-size: 1.2rem;
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+    }
+
+    &__name {
+        font-weight: 600;
+    }
+
+    &__abbreviation {
+        font-size: 1.2rem;
+    }
+
+    &__change {
+        color: darken($color: $green, $amount: 40%);
+    }
+
+    .icon {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-right: 10px;
+        background-color: $black;
+
+        img {
+            width: 50%;
+            filter: invert(100%);
+        }
+    }
+
+    @media (min-width: $small) {
+        grid-template-columns: 2fr 1fr 1fr 1fr 0.5fr;
+    }
+}
+
+header.market-header {
+    flex-direction: column;
+
+    > .flex-between {
+        justify-content: flex-start;
+    }
+}

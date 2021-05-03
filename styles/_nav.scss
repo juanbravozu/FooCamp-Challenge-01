@@ -1,58 +1,54 @@
 .nav {
+    position: fixed;
     display: flex;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    padding: 1rem 2rem;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    background-color: $black;
 
-    &__icon {
-        margin: 0 5px;
-        opacity: 0.5;
+    &__link {
+        margin: 5px;
+        opacity: 0.6;
         transition: opacity 0.3s ease-out;
 
         &:hover {
             opacity: 1;
         }
-    }
 
-    &__logoContainer {
-        display: grid;
-        place-items: center;
-        width: 45px;
-        height: 45px;
-        border-radius: 15px;
-        background-color: $yellow;
-
-        &:hover .nav__logo{
-            transform: scale(1.1);
+        @media (min-width: $small) {
+            margin: 0 15 px;
         }
     }
 
-    &__logo {
-        transition: transform 0.3s ease-out;
-    }
+    .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: $yellow;
+        cursor: pointer;
+        
+        img {
+            transition: transform 0.3s ease-out;
+        }
 
-    @media (min-width: $small) {
-        &__link {
-            margin: 0 15px;
-        }        
+        &:hover img {
+            transform: scale(1.05);
+        }
     }
 
     @media (min-width: $medium) {
         flex-direction: column;
-        height: 100%;
-        width: 80px;
-        margin: 20px;
-        margin-left: 0;
-
-        &__logoContainer {
-            width: 70px;
-            height: 70px;
-        }
+        width: fit-content;
+        top: 2rem;
+        height: calc(100% - 4rem);
 
         &__link {
             display: block;
-            width: fit-content;
-            margin: 40px auto;
+            margin: 25px auto;
         }
     }
 }
