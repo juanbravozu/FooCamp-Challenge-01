@@ -285,15 +285,24 @@
 
 .ad__free {
   position: relative;
+  display: block;
   padding: 0 10px;
   color: #c9bbe0;
   background-color: #202020;
+  -webkit-box-shadow: 0 0 0 2px #202020;
+          box-shadow: 0 0 0 2px #202020;
   border: 2px #c9bbe0 solid;
   border-radius: 1rem;
-  z-index: 2;
+  -webkit-transform: rotate(-7deg);
+          transform: rotate(-7deg);
 }
 
-.ad__free::before {
+.ad__freeContainer {
+  display: inline-block;
+  position: relative;
+}
+
+.ad__freeContainer::before {
   content: '';
   position: absolute;
   left: 0;
@@ -302,9 +311,8 @@
   height: 100%;
   border-radius: 2rem;
   background-color: #c9bbe0;
-  -webkit-transform: rotate(-20deg);
-          transform: rotate(-20deg);
-  z-index: -1;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
 }
 
 .ad button {

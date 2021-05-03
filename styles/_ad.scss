@@ -26,14 +26,20 @@
     }
 
     &__free {
-        $darkPurple: darken($purple, 10%);
         position: relative;
+        display: block;
         padding: 0 10px;
-        color: $darkPurple;
+        color: darken($purple, 10%);
         background-color: $black;
-        border: 2px $darkPurple solid;
+        box-shadow: 0 0 0 2px $black;
+        border: 2px darken($purple, 10%) solid;
         border-radius: 1rem;
-        z-index: 2;
+        transform: rotate(-7deg);
+    }
+
+    &__freeContainer {
+        display: inline-block;
+        position: relative;
 
         &::before {
             content: '';
@@ -43,9 +49,8 @@
             width: 100%;
             height: 100%;
             border-radius: 2rem;
-            background-color: $darkPurple;
-            transform: rotate(-20deg);
-            z-index: -1;
+            background-color: darken($purple, 10%);
+            transform: rotate(-30deg);
         }
     }
 
