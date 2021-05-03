@@ -7,6 +7,10 @@
 
     &--labels {
         font-size: 1.2rem;
+
+        .market__text:last-child {
+            justify-self: center;
+        }
     }
 
     &__brand {

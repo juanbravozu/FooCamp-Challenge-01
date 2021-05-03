@@ -11,7 +11,7 @@
 </head>
 <body>
     <main>
-        <header class="flex-between header max-bound">
+        <header class="flex-between header max-bound" style="--order: 0">
             <div>
                 <h1>Overview</h1>
             </div>
@@ -33,7 +33,7 @@
         </header>
 
         <div class="inner-wrapper max-bound">
-            <section id="portfolio-section">
+            <section id="portfolio-section" style="--order: 1">
                 <header>
                     <h2>Portfolio</h2>
                 </header>
@@ -124,7 +124,7 @@
                 </article>
             </section>
 
-            <section id="ad-section">
+            <section id="ad-section" style="--order: 2">
                 <article class="ad">
                     <h2 class="ad__title">Earn <span class="ad__free">free</span> crypto with Coinview Earn</h2>
                     <p class="ad__text">Learn about different cryptocurrencies and earn them for free!</p>
@@ -132,7 +132,7 @@
                 </article>
             </section>
 
-            <section id="cards-section">
+            <section id="cards-section" style="--order: 3">
                 <header class="flex-between">
                     <h2>Your Assets</h2>
                     <button>
@@ -206,7 +206,7 @@
                 </div>                
             </section>
 
-            <section id="market-section">
+            <section id="market-section" style="--order: 4">
                 <header class="flex-between market-header">
                     <h2>Market is down 0.80%</h2>
 
@@ -320,29 +320,29 @@
         </div>        
     </main>
     
-    <nav class="nav">
+    <nav class="nav" style="--order: 5">
         <a class="icon">
             <img src="./assets/logo.svg" alt="Logo">
         </a>
 
         <div class="nav__container">
-            <a href="#" class="nav__link">
+            <a href="#" class="nav__link" style="--position: -2">
                 <img src="./assets/icon_dashboard.svg" alt="">
             </a>
 
-            <a href="#" class="nav__link">
+            <a href="#" class="nav__link" style="--position: -1">
                 <img src="./assets/icon_wallet.svg" alt="">
             </a>
 
-            <a href="#" class="nav__link">
+            <a href="#" class="nav__link" style="--position: 0">
                 <img src="./assets/icon_stats.svg" alt="">
             </a>
 
-            <a href="#" class="nav__link">
+            <a href="#" class="nav__link" style="--position: 1">
                 <img src="./assets/icon_cube.svg" alt="">
             </a>
 
-            <a href="#" class="nav__link">
+            <a href="#" class="nav__link" style="--position: 2">
                 <img src="./assets/icon_profile.svg" alt="">
             </a>
         </div>
